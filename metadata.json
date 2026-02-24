@@ -1,0 +1,7 @@
+{
+  "name": "GLOBAL AI",
+  "description": "Powered by TAUSIF ISLAM. A mobile-first AI assistant with voice, file upload, and search capabilities.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
