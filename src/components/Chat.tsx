@@ -323,9 +323,9 @@ export default function Chat({ userEmail, onLogout }: { userEmail: string; onLog
   };
 
   return (
-    <div className="flex flex-col h-[100dvh] bg-[#050505] text-white overflow-hidden relative font-sans">
+    <div className="flex flex-col min-h-screen bg-[#050505] text-white relative font-sans">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -345,7 +345,7 @@ export default function Chat({ userEmail, onLogout }: { userEmail: string; onLog
       </div>
 
       {/* Header */}
-      <header className="w-full z-10 bg-black/40 backdrop-blur-xl border-b border-white/5">
+      <header className="sticky top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
             <motion.div
@@ -378,7 +378,7 @@ export default function Chat({ userEmail, onLogout }: { userEmail: string; onLog
       </header>
 
       {/* Chat Area */}
-      <div className="flex-1 overflow-y-auto w-full scroll-smooth z-10">
+      <main className="flex-1 w-full z-10 relative">
         <div className="max-w-4xl mx-auto w-full p-4 md:p-8 pb-40">
           {messages.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center mt-20">
@@ -533,10 +533,10 @@ export default function Chat({ userEmail, onLogout }: { userEmail: string; onLog
           </div>
         )}
         </div>
-      </div>
+      </main>
 
       {/* Input Area */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#050505] via-[#050505]/90 to-transparent z-20 pt-20 pb-6 px-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-[#050505] via-[#050505]/90 to-transparent z-40 pt-20 pb-6 px-4">
         <div className="max-w-4xl mx-auto w-full">
           <motion.div 
             layout
